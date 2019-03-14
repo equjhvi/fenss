@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    姓名：<input type="text" id="name" />
+    <input type="button" value="搜索" id="btn1">
+    <table id="tab1" border="1" width='500'>
+        <thead>
+            <td>ID</td>
+            <td>姓名</td>
+            <td>年龄</td>
+        </thead>
+        <tbody>
+            <tr>
+                <td>1</td>
+                <td>Blue</td>
+                <td>27</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>李二</td>
+                <td>22</td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>张三</td>
+                <td>23</td>
+            </tr>
+            <tr>
+                <td>4</td>
+                <td>李四</td>
+                <td>19</td>
+            </tr>
+            <tr>
+                <td>5</td>
+                <td>王老五</td>
+                <td>18</td>
+            </tr>
+            <tr>
+                <td>6</td>
+                <td>王老六</td>
+                <td>26</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <script>
+        window.onload = function () {
+            var oTab = document.getElementById('tab1');
+            var oBtn = document.getElementById('btn1');
+            var oName = document.getElementById('name');
+
+            oBtn.onclick=function(){
+                for(var i=0;i<oTab.tBodies[0].rows.length;i++){
+                    var sTab = oTab.tBodies[0].rows[i].cells[1].innerHTML.toLowerCase();
+                    var sTxt=oName.value.toLowerCase();
+                    if(sTab.search(sTxt)!=-1){
+                        oTab.tBodies[0].rows[i].style.background='yellow'
+                    }else{
+                        oTab.tBodies[0].rows[i].style.background=''
+                    }
+                }
+            }
+        }
+    </script>
+</body>
+
+</html>
