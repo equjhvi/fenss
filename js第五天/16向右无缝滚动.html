@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+       *{
+           margin: 0;
+           padding: 0;
+       }
+       img{
+           vertical-align: middle;
+       }
+       #div1{
+           width: 712px;
+           height: 108px;
+           margin:  100px auto;
+           background-color: red;
+           position: relative;
+           overflow: hidden;
+       }
+       #div1 ul{
+           position: absolute;
+           left: 0;
+           top: 0;
+       }
+       #div1 ul li{
+           list-style: none;
+           float: left;
+           width: 178px;
+           height: 108px;
+       }
+    
+    </style>
+</head>
+<body>
+    <div id="div1">
+      <ul>
+          <li><img src="img2/1.jpg" alt=""></li>
+          <li><img src="img2/2.jpg" alt=""></li>
+          <li><img src="img2/3.jpg" alt=""></li>
+          <li><img src="img2/4.jpg" alt=""></li>
+      </ul>
+    </div>
+
+    <script>
+        window.onload=function(){
+            var oDiv = document.getElementById("div1");
+            var oUl = oDiv.getElementsByTagName('ul')[0];
+            var aLi = oUl.getElementsByTagName('li');
+
+
+            oUl.innerHTML= oUl.innerHTML+ oUl.innerHTML;
+            // console.log(aLi[0].offsetWidth)
+            oUl.style.width = aLi[0].offsetWidth*aLi.length+"px";
+            // console.log(oUl.style.width)
+
+           //有bug 有缝的
+            // setInterval(function () { 
+            //     oUl.style.left=oUl.offsetLeft-2+"px";
+            //  },30)
+          setInterval(function () { 
+              if(oUl.offsetLeft>0){
+                  //一超过这个右边的可视区域 left>0 回到原点
+                   oUl.style.left = -oUl.offsetWidth/2+"px"
+              }
+               oUl.style.left=oUl.offsetLeft+2+"px";
+           },10)
+              
+        }
+    
+    
+    </script>
+</body>
+</html>

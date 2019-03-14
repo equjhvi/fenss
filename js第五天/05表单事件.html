@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <form id="form1" action="http://www.ossjk.com" method="get">
+        <label for="user_name">
+            用户名：<input type="text" id="user_name" name="user" />
+        </label><br />
+        <label for="paw">
+            密码：<input type="password" name="password" />
+        </label><br />
+        <input type="submit" />
+        <input type="reset" />
+    </form>
+    <script>
+       window.onload=function(){
+           var oForm = document.getElementById('form1')
+           oForm.onsubmit=function(){
+               confirm("您确定要提交表单吗？")
+           }
+           oForm.onreset=function(){
+            confirm("您是否要重置信息？") 
+           }
+       }
+    
+    </script>
+</body>
+</html>

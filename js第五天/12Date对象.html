@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+       var oDate = new Date();
+    //    alert(oDate.getFullYear())//拿年份
+    // alert(oDate.getMonth()+1)//月份的下标是从0开始的  要加1 才能拿到准确月份
+    // alert(oDate.getDay())//拿星期几
+    // alert(oDate.getDate())//拿到日
+    // alert(oDate.getMilliseconds())//拿毫秒
+    // alert(oDate.getTime())//1970年1月1日到现在的毫秒
+
+    var timestamp4 = new Date(1552461059827);//直接用 new Date(时间戳) 格式转化获得当前时间
+
+    //  console.log(timestamp4);
+     console.log(timestamp4.toLocaleDateString().replace(/\//g, "-") + " " + timestamp4.toTimeString().substr(0, 8)); 
+
+    
+    
+    </script>
+</body>
+</html>

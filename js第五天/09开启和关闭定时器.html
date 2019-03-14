@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <input type="button" value="开启" id="btn1">
+    <input type="button" value="关闭" id="btn2">
+    <script>
+        window.onload= function(){
+            var oBtn1 = document.getElementById('btn1')
+            var oBtn2 = document.getElementById('btn2')
+
+            oBtn1.onclick=()=>{
+                timer=setInterval(()=>{
+                    console.log('a')
+                },1000)
+            }
+
+            oBtn2.onclick=()=>{
+                clearInterval(timer)
+            }
+        }
+    
+    
+    </script>
+</body>
+</html>

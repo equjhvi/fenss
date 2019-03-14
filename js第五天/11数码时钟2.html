@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        body {
+            background-color: #000;
+            color: #fff;
+            font-size: 50px;
+        }
+    </style>
+</head>
+
+<body>
+    <img src="img/0.png">
+    <img src="img/0.png">
+    :
+    <img src="img/0.png">
+    <img src="img/0.png">
+    :
+    <img src="img/0.png">
+    <img src="img/0.png">
+
+    <script>
+        //补0
+        function toDou(n) {
+            if (n < 10) {
+                //补0同时将这个数组转化成字符串
+                return '0' + n
+            } else {
+                return '' + n
+            }
+        }
+        window.onload = function () {
+            var aImg = document.getElementsByTagName("img")
+
+            //    var oDate =new Date();
+            //    var str=toDou(oDate.getHours())+toDou(oDate.getMinutes())+toDou(oDate.getSeconds());
+            // //    console.log(str)
+
+            //     for(var i=0;i<aImg.length;i++){
+            //        aImg[i].src='img/'+str[i]+".png"
+            //     }
+
+
+            //会动的时钟
+            function clock() {
+                var oDate = new Date();
+                var str = toDou(oDate.getHours()) + toDou(oDate.getMinutes()) + toDou(oDate.getSeconds());
+                //    console.log(str)
+
+                for (var i = 0; i < aImg.length; i++) {
+                    aImg[i].src = 'img/' + str[i] + ".png"
+                }
+            }
+
+            setInterval(clock,1000);
+            clock();
+        }
+    </script>
+</body>
+
+</html>

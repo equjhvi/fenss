@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        #ul1{
+            background-color: green;
+        }
+        #ul2{background: yellow;}
+      
+      </style>
+</head>
+<body>
+    <ul id="ul1">
+        <li>a</li>
+        <li>b</li>
+        <li>c</li>
+        <li>d</li>
+    </ul>
+    <input type="button" value="移动" id="btn1">
+    <ul id="ul2"></ul>
+
+    <script>
+       window.onload=function(){
+           var oUl1=document.getElementById('ul1');
+           var oBtn=document.getElementById('btn1');
+           var oUl2=document.getElementById('ul2');
+
+           oBtn.onclick=function(){
+               var oLi = oUl1.children[0];//找到ul1里面的第一个元素
+               oUl1.removeChild(oLi);
+               oUl2.appendChild(oLi)
+           }
+       }
+    
+    </script>
+</body>
+</html>
